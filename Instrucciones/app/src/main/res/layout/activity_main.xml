@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtValor"
+        android:layout_width="265dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Ingrese un número"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="192dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="32dp"
+        android:onClick="instruccion"
+        android:text="Calcular"
+        app:layout_constraintEnd_toEndOf="@+id/edtValor"
+        app:layout_constraintStart_toStartOf="@+id/edtValor"
+        app:layout_constraintTop_toBottomOf="@+id/edtValor" />
+
+    <TextView
+        android:id="@+id/tvIncrementar"
+        android:layout_width="152dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/btnCalcular"
+        app:layout_constraintStart_toStartOf="@+id/btnCalcular"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
+
+    <TextView
+        android:id="@+id/tvDecrementar"
+        android:layout_width="154dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvIncrementar"
+        app:layout_constraintStart_toStartOf="@+id/tvIncrementar"
+        app:layout_constraintTop_toBottomOf="@+id/tvIncrementar" />
+
+    <TextView
+        android:id="@+id/tvDuplicar"
+        android:layout_width="155dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvDecrementar"
+        app:layout_constraintStart_toStartOf="@+id/tvDecrementar"
+        app:layout_constraintTop_toBottomOf="@+id/tvDecrementar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
