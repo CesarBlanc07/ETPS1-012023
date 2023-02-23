@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -27,45 +24,32 @@ public class MainActivity extends AppCompatActivity
         contra = findViewById(R.id.edtContra);
         ingresar = findViewById(R.id.btnIngresar);
 
+        ingresar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                ejercicio();
+            }
+        });
+
     }
 
-    public void ingresar(View v)
+    public void ejercicio()
     {
-        String nombre = usuario.getText().toString();
-        String pass = contra.getText().toString();
+        String user, pass;
+        user = usuario.getText().toString();
+        pass = contra.getText().toString();
 
-        if(nombre.equals("parcialETps1") && pass.equals("p4rC14l#tp$"))
+        if(user.equals("parcialETps1") && pass.equals("p4rC14l#tp$"))
         {
-            ingresar.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Intent intento = new Intent(getApplicationContext(), Pantalla_Formula.class);
-                    startActivity(intento);
-                }
-            });
+            Intent intento = new Intent();
+            intento = new Intent(this,Pantalla_Formula.class);
+            startActivity(intento);
         }
-
         else
         {
-            ingresar.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View view)
-                {
-                    Toast toastp = new Toast(getApplicationContext());
-                    LayoutInflater inflater = getLayoutInflater();
-                    View layout = inflater.inflate(R.layout.toast_mensaje,(ViewGroup) findViewById(R.id.lytMensaje));
-
-                    TextView txtmensaje = (TextView) layout.findViewById(R.id.txvMen);
-                    txtmensaje.setText("Usuario o Contraseña incorrectos");
-
-                    toastp.setDuration(Toast.LENGTH_LONG);
-                    toastp.setView(layout);
-                    toastp.show();
-                }
-            });
+            Toast.makeText(this,"Contraseña o usuario incorrectos",Toast.LENGTH_LONG).show();
         }
     }
 }
